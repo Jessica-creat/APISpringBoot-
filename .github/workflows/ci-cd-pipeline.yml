@@ -10,7 +10,7 @@ env:
   JAVA_VERSION: '21'
   DOCKER_IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/apispringboot
   SONAR_PROJECT_KEY: Jessica-creat_APISpringBoot-   # Doit matcher SonarCloud
-  SONAR_ORGANIZATION: Jessica-creat
+  S  SONAR_ORGANIZATION: jessdock517
 
 jobs:
   build-and-test:
@@ -81,7 +81,7 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
-            -Dsonar.organization=${{ env.SONAR_ORGANIZATION }} 
+            -Dsonar.organization=jessdock517 
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
             -Dsonar.java.binaries=target/classes
             -Dsonar.junit.reportPaths=target/surefire-reports
