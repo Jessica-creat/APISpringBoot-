@@ -48,6 +48,16 @@ jobs:
           name: coverage-report
           path: target/site/jacoco/
 
+      - name: Run Sonar analysis with Maven
+        run: |
+                  mvn -B compile
+                  mvn -B sonar:sonar \
+                    -Dsonar.projectKey=Jessica-creat_APISpringBoot- \
+                    -Dsonar.organization=jessdock517 \
+                    -Dsonar.host.url=https://sonarcloud.io \
+                    -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+                    -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+
   code-quality:
     name: SonarQube Analysis
     runs-on: ubuntu-latest
