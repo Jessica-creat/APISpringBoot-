@@ -73,13 +73,13 @@ jobs:
           path: target/site/jacoco/
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v4
+        uses: SonarSource/sonarqube-scan-action@v6
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
             -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
-            -Dsonar.organization=jessdock517  # Remplacez par votre username SonarCloud
+            -Dsonar.organization=jessdock517  
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
             -Dsonar.java.binaries=target/classes
             -Dsonar.junit.reportPaths=target/surefire-reports
