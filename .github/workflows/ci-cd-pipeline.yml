@@ -9,7 +9,7 @@ on:
 env:
   JAVA_VERSION: '21'
   DOCKER_IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/apispringboot
-  SONAR_PROJECT_KEY: Jessica-creat_APISpringBoot-   # Doit matcher SonarCloud
+  SONAR_PROJECT_KEY: Jessica-creat_APISpringBoot-
   S  SONAR_ORGANIZATION: jessdock517
 
 jobs:
@@ -156,7 +156,7 @@ jobs:
             docker rm apispringboot || true
             docker run -d --name apispringboot -p 80:8080 ${{ secrets.DOCKERHUB_USERNAME }}/apispringboot:latest
             docker image prune -f
-            echo "✅ Déploiement réussi !"
+            echo "Déploiement réussi !"
 
       - name: Health check
         run: |
