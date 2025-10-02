@@ -9,7 +9,8 @@ on:
 env:
   JAVA_VERSION: '21'
   DOCKER_IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/apispringboot
-  SONAR_PROJECT_KEY: apispringboot  # Doit matcher SonarCloud
+  SONAR_PROJECT_KEY: Jessica-creat_APISpringBoot-   # Doit matcher SonarCloud
+  SONAR_ORGANIZATION: Jessica-creat
 
 jobs:
   build-and-test:
