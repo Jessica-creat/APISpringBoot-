@@ -86,6 +86,7 @@ jobs:
             -Dsonar.java.binaries=target/classes
             -Dsonar.junit.reportPaths=target/surefire-reports
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
+            -Dsonar.ci.autoconfig.disabled=true
 
   security-scan:
     name: Security Scan
@@ -105,7 +106,7 @@ jobs:
 
   build-and-push-docker:
     name: Build and Push Docker Image
-    runs-on: ubuntu-linux-latest
+    runs-on: ubuntu-latest
     needs: [build-and-test, code-quality, security-scan]
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
